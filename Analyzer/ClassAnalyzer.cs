@@ -9,7 +9,7 @@ namespace FileAnalyzer
 {
     public class ClassAnalyzer
     {
-        private readonly string pattern = @"(\w+)(_)(\w+)(_Test\S{0})";
+        private readonly string pattern = @"(\w+)(_\w+)(_Test\b\S{0})";
         private readonly SyntaxTree m_tree;
         private readonly Regex m_regex;
 
