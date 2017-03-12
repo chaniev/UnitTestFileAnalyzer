@@ -58,5 +58,55 @@ namespace FileAnalyzer.UnitTests
             target.Parse();
             Assert.IsTrue(target.Error.Contains(expected));
         }
+
+        [TestMethod]
+        public void Parse_ErrorIfContaintSymbolsAfterPostfix_Test()
+        {
+            const string filecontent = @"
+ [TestClass]
+ public class Sample
+ {
+    [TestMethod]
+    public void FooMethod_Descr_Test2()
+    {
+    }
+ }";
+            const string expected = "FooMethod_Descr_Test2";
+            var target = new ClassAnalyzer(filecontent);
+            target.Parse();
+            Assert.IsTrue(target.Error.Contains(expected));
+        }
+
+        [TestMethod]
+        public void Parse_NoErrorIfNoAttributeTestClass_Test()
+        {
+            const string filecontent = @"
+ public class Sample
+ {
+    [TestMethod]
+    public void FooMethod_Descr()
+    {
+    }
+ }";
+            var target = new ClassAnalyzer(filecontent);
+            target.Parse();
+            Assert.IsFalse(target.Error.Any());
+        }
+
+        [TestMethod]
+        public void Parse_NoErrorIfNoAttributeTestMethod_Test()
+        {
+            const string filecontent = @"
+ [TestClass]
+ public class Sample
+ {
+    public void FooMethod_Descr()
+    {
+    }
+ }";
+            var target = new ClassAnalyzer(filecontent);
+            target.Parse();
+            Assert.IsFalse(target.Error.Any());
+        }
     }
 }
