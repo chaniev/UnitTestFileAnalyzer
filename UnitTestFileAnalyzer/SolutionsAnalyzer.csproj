@@ -10,8 +10,8 @@
     <ProjectGuid>{02AA15C5-F8A6-478C-A731-B831140A9CF6}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UnitTestFileAnalyzer</RootNamespace>
-    <AssemblyName>UnitTestFileAnalyzer</AssemblyName>
+    <RootNamespace>SolutionsAnalyzer</RootNamespace>
+    <AssemblyName>SolutionsAnalyzer</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

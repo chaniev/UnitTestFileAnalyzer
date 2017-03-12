@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestFileAnalyzer", "UnitTestFileAnalyzer\UnitTestFileAnalyzer.csproj", "{02AA15C5-F8A6-478C-A731-B831140A9CF6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolutionsAnalyzer", "UnitTestFileAnalyzer\SolutionsAnalyzer.csproj", "{02AA15C5-F8A6-478C-A731-B831140A9CF6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Analyzer", "Analyzer\Analyzer.csproj", "{5D151F21-5008-4F60-89B0-A775C793B077}"
 EndProject
