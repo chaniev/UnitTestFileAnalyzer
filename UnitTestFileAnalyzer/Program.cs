@@ -1,8 +1,8 @@
 using System;
 using System.IO;
-using Analyzer;
+using FileAnalyzer;
 
-namespace UnitTestFileAnalyzer
+namespace SolutionsAnalyzer
 {
     class Program
     {
