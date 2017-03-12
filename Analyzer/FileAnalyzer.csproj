@@ -7,8 +7,8 @@
     <ProjectGuid>{5D151F21-5008-4F60-89B0-A775C793B077}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Analyzer</RootNamespace>
-    <AssemblyName>Analyzer</AssemblyName>
+    <RootNamespace>FileAnalyzer</RootNamespace>
+    <AssemblyName>FileAnalyzer</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
