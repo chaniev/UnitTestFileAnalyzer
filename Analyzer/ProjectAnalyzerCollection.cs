@@ -4,7 +4,7 @@ using System.Linq;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.MSBuild;
 
-namespace UnitTestFileAnalyzer
+namespace Analyzer
 {
     public class ProjectAnalyzerCollection
     {
@@ -43,11 +43,12 @@ namespace UnitTestFileAnalyzer
         {
             foreach (var error in Errors)
             {
-                _action.Invoke($"{error.Key.Item1} {error.Key.Item2}");
+                _action.Invoke($"project name: {error.Key.Item1} file name: {error.Key.Item2}");
                 foreach (var methodName in error.Value)
                 {
                     _action.Invoke($"{methodName}");
                 }
+                _action.Invoke(string.Empty);
             }
         }
     }
