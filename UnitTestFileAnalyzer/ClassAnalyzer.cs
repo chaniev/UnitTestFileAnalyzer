@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -9,15 +8,12 @@ namespace UnitTestFileAnalyzer
 {
     public class ClassAnalyzer
     {
-        private string m_content;
-        private SyntaxTree m_tree;
+        private readonly SyntaxTree m_tree;
 
         public ClassAnalyzer(string _content)
         {
-            m_content = _content;
             Error = new List<string>();
-            m_tree = CSharpSyntaxTree.ParseText(m_content);
-
+            m_tree = CSharpSyntaxTree.ParseText(_content);
         }
 
         public ClassAnalyzer(Document _document)
@@ -54,10 +50,9 @@ namespace UnitTestFileAnalyzer
         {
             foreach (var attlist in classdeclaration.AttributeLists)
             {
-                foreach (var attribute in attlist.Attributes)
+                if (attlist.Attributes.Select(attribute => attribute.Name.ToString()).Any(tt => tt == "TestClass"))
                 {
-                    var tt = attribute.Name.ToString();
-                    if (tt == "TestClass") return true;
+                    return true;
                 }
             }
             return false;
@@ -73,10 +68,9 @@ namespace UnitTestFileAnalyzer
         {
             foreach (var attlist in methodds.AttributeLists)
             {
-                foreach (var attribute in attlist.Attributes)
+                if (attlist.Attributes.Select(attribute => attribute.Name.ToString()).Any(tt => tt == "TestMethod"))
                 {
-                    var tt = attribute.Name.ToString();
-                    if (tt == "TestMethod") return true;
+                    return true;
                 }
             }
             return false;
