@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -8,16 +9,20 @@ namespace FileAnalyzer
 {
     public class ClassAnalyzer
     {
+        private readonly string pattern = @"(\w+)(_)(\w+)(_Test)\S{0}";
         private readonly SyntaxTree m_tree;
+        private readonly Regex m_regex;
 
         public ClassAnalyzer(string _content)
         {
+            m_regex = new Regex(pattern);
             Error = new List<string>();
             m_tree = CSharpSyntaxTree.ParseText(_content);
         }
 
         public ClassAnalyzer(Document _document)
         {
+            m_regex = new Regex(pattern);
             Error = new List<string>();
             m_tree = _document.GetSyntaxTreeAsync().Result;
         }
@@ -60,8 +65,7 @@ namespace FileAnalyzer
 
         private bool checkMethodNamePattern(string name)
         {
-            if (name.Contains("_Test")) return true;
-            return false;
+            return m_regex.IsMatch(name);
         }
 
         private bool IsTestMesthod(MethodDeclarationSyntax methodds)
