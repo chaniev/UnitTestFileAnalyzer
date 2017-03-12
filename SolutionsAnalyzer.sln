@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolutionsAnalyzer", "UnitTe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileAnalyzer", "Analyzer\FileAnalyzer.csproj", "{5D151F21-5008-4F60-89B0-A775C793B077}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileAnalyzer.UnitTests", "FileAnalyzer.UnitTests\FileAnalyzer.UnitTests.csproj", "{9F49BE4C-3E03-4BE4-9F22-3B5702B94135}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,14 @@ Global
 		{5D151F21-5008-4F60-89B0-A775C793B077}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5D151F21-5008-4F60-89B0-A775C793B077}.Release|x86.ActiveCfg = Release|Any CPU
 		{5D151F21-5008-4F60-89B0-A775C793B077}.Release|x86.Build.0 = Release|Any CPU
+		{9F49BE4C-3E03-4BE4-9F22-3B5702B94135}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F49BE4C-3E03-4BE4-9F22-3B5702B94135}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F49BE4C-3E03-4BE4-9F22-3B5702B94135}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9F49BE4C-3E03-4BE4-9F22-3B5702B94135}.Debug|x86.Build.0 = Debug|Any CPU
+		{9F49BE4C-3E03-4BE4-9F22-3B5702B94135}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F49BE4C-3E03-4BE4-9F22-3B5702B94135}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F49BE4C-3E03-4BE4-9F22-3B5702B94135}.Release|x86.ActiveCfg = Release|Any CPU
+		{9F49BE4C-3E03-4BE4-9F22-3B5702B94135}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
